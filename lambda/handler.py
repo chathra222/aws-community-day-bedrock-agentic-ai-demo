@@ -5,7 +5,7 @@ from github import Github
 
 def lambda_handler(event, context):
     logs = open('/tmp/failed_log.txt').read()
-    dom_snapshot = open('/tmp/dom_snapshot.html').read() if os.path.exists('/tmp/dom_snapshot.html') else None
+    dom_snapshot = open('/tmp/dom_snapshot.html').read()
     test_file = open('/tmp/sample.spec.ts').read()
 
     bedrock = boto3.client('bedrock-agent-runtime')
